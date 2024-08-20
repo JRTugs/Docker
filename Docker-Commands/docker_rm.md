@@ -5,6 +5,7 @@ Remove one or more containers
 **Syntax:**
 
 docker container rm [OPTIONS] CONTAINER [CONTAINER...]
+
 docker rm [OPTIONS] CONTAINER [CONTAINER...]
 
 
