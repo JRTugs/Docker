@@ -1,6 +1,10 @@
 # Docker exec Commands
 
+Execute a command in a running container
+
+```bash
 docker exec <container-id-or-name> <command>
+```
 
 ## Run command in container
 ```bash
