@@ -38,6 +38,16 @@ docker kill [CONTAINER ID]
 docker kill 269ca7e4693d
 ```
 
+## Docker image history
+docker image history [OPTIONS] IMAGE
+docker history [IMAGE]
+```bash
+docker history jodo0131/helloworld:latest
+```
+
+
+
+
 
 
 
