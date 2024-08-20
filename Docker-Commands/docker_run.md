@@ -2,7 +2,7 @@
 
 Create and run a new container from an image
 ```bash
-docker run <image_name>
+docker run <image_name:tag>
 ```
 
 ## Docker run
