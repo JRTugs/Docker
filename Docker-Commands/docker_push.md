@@ -2,7 +2,7 @@
 
 Upload an image to a registry
 
-Syntax:
+**Syntax:**
 docker image push [OPTIONS] NAME[:TAG]
 
 ## Push image to registry
