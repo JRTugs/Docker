@@ -3,9 +3,11 @@
 The Docker Commit image is used to create a NEW IMAGE from the changes made to the Docker container. 
 Docker commit can save the current state of the container in the form of a Docker image.
 
-Syntax:
+**Syntax:**
+
 docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
- docker commit <container_id> <new_image_name>
+
+docker commit [container_id] [new_image_name]
 
 ## Commit using defaults
 ```bash
