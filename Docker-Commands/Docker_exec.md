@@ -2,8 +2,8 @@
 
 Execute a command in a running container
 
-Syntax:
-docker exec <container-id-or-name> <command>
+**Syntax:**
+docker exec [container-id-or-name] [command]
 
 
 ## Run command in container
