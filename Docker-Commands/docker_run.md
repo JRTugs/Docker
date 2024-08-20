@@ -1,5 +1,10 @@
 # Docker run Commands
 
+Create and run a new container from an image
+```bash
+docker run <image_name>
+```
+
 ## Docker run
 ```bash
 docker run jodo0131/helloworld:latest
