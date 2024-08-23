@@ -58,7 +58,7 @@ Isolates container from Host and other containers. Only loopback interface will 
 docker run -d --name helloworld --network none jodo0131/helloworld:latest
 ```
 
-# IPvlan
+# IPVlan
 IPVlan network creates a network with the same CIDR Block of the Host.
 
 Create IPVlan network
@@ -71,7 +71,7 @@ docker network create -d ipvlan \
 ```
 
 ```bash
-docker run -d --name helloworld --network my-ipvlan jodo0131/helloworld:latest
+docker run -d --name helloworld --network my-ipvlan-net jodo0131/helloworld:latest
 ```
 
 Note: Container IP will now be different this time when connected to IPVlan as each container is now assigned different IP.
@@ -80,12 +80,39 @@ Host IP: 192.168.100.42
 Container IP: 192.168.100.2
 ![image](https://github.com/user-attachments/assets/18bfe5e5-ccfa-43e4-8149-5731c83085ba)
 
+# MACVlan
+MAC address of the container will be different from MAC address of HOST.
 
+Create MACVlan network
+```bash
+docker network create -d macvlan \
+    --subnet=192.168.100.0/24 \
+    --gateway=192.168.100.1 \
+    -o ipvlan_mode=l2 \
+    -o parent=enp0s3 my-macvlan-net
+```
 
+```bash
+docker run -d --name helloworld --network my-macvlan-net jodo0131/helloworld:latest
+```
 
+# Overlay
+Used to create docker network on different host and using docker swarm
 
+```bash
+(host 1) ip addr
+(host 1) sudo ethtool -K enp0s3 tx-checksum-ip-generic off
 
+(host 2) ip addr
+(host 2) sudo ethtool -K enp0s3 tx-checksum-ip-generic off
 
+(host 1) docker swarm init
+(host 2) docker swarm join ...
+(host 1) docker network create -d overlay --attachable my-overlay-net
+(host 1) docker network ls
 
-
-
+(host 1) docker run -d --name helloworld --network my-overlay-net jodo0131/helloworld:latest
+(host 2) docker network ls
+(host 2) docker run -dit --name helloworld-v2 --network my-overlay-net jodo0131/helloworld:latest
+(host 2) docker network ls
+```bash
