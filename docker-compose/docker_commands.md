@@ -21,3 +21,30 @@ docker run -d \
 --net mongo-network \
 --name mongo-express \
 mongo-express
+
+## docker up
+Start all container in docker-compose
+```bash
+docker-compose -f mongo-services.yaml up -d
+```
+
+## docker down
+Shutdown all container in docker-compose
+```bash
+docker-compose -f mongo-services.yaml down
+```
+
+Note: UP and DOWN command will shutdown the container and removing any data in the databases running inside the container.
+
+## Docker start
+```bash
+docker-compose -f mongo-services.yaml down -d
+```
+
+## Docker Stop
+Container are just in exited status
+```bash
+docker-compose -f mongo-services.yaml stop
+```
+Note: STOP command will just exit the container thus retaining any data in the databases running inside the container.
+
