@@ -44,9 +44,57 @@ docker cp helloworld:/app/sample.txt /tmp/
 Creates new container from an image without starting it
 
 ```bash
+docker container create --name redis redis:latest
 ```
 
+## Docker Diff
+```bash
+docker container diff redis
+```
 
+## Docker Container Export
+```bash
+docker export redis > redis.tar
+```
+## Docker Port
+```bash
+docker port redis
+```
+
+## Docker Container prune
+```bash
+docker container prune -f
+```
+
+## Docker Container Rename
+```bash
+docker container rename redis redis2
+```
+
+## Docker Container Stats
+```bash
+docker stats
+```
+
+## Docker Top
+```bash
+docker container top redis
+```
+
+## Docker Pause
+```bash
+docker container pause redis
+```
+
+## Docker Unpause
+```bash
+docker container unpause redis
+```
+
+## Docker Update
+```bash
+docker update --kernel-memory 80M redis
+```
 
 
 
