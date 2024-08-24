@@ -45,7 +45,7 @@ docker history [IMAGE]
 docker history jodo0131/helloworld:latest
 ```
 
-## stop and Remove all container
+## Stop and Remove all container
 ```bash
 docker ps -aq | xargs docker rm -f
 ```
