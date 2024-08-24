@@ -50,6 +50,11 @@ docker history jodo0131/helloworld:latest
 docker ps -aq | xargs docker rm -f
 ```
 
+## Docker Info
+```bash
+docker info
+```
+
 
 
 
