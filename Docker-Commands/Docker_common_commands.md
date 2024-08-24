@@ -55,6 +55,15 @@ docker ps -aq | xargs docker rm -f
 docker info
 ```
 
+## Docker login
+```bash
+docker login
+```
+
+## Docker logout
+```bash
+docker logout
+```
 
 
 
